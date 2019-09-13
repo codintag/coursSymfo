@@ -3,12 +3,13 @@
 {% block title %}Hello BlogController!{% endblock %}
 
 {% block body %}
+
     <section class=""articles>
         {% for article in articles %}
             <article>
             <h2>{{ article.title }}</h2>
             <div class="metadata">
-                Ecrit le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }} dans la catégorie Economie
+                Ecrit le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }} dans la catégorie " {{article.category.title }} "
             </div>
             <div class="content"></div>
             <img src="{{ article.image }}" alt="">
